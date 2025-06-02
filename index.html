@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categoria Do Atleta</title>
+    <link rel = "stylesheet" href="style.css">
+</head>
+<body>
+    <H1>Descubra sua Categoria na CBJJ</H1> <br>
+    <form id="formulario">
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" id="dataNascimento" required >
+        
+        <label for="faixa">Faixa:</label>
+        <select id="faixa" required >
+            <option value="">Selecione</option>
+            <option value="Branca">Branca</option>
+            <option value="Cinza-Branco">Cinza-Branco</option>
+            <option value="Cinza">Cinza</option>
+            <option value="Cinza-Preto">Cinza-Preto</option>
+            <option value="Amarela-Branco">Amarela-Branco</option>
+            <option value="Amarela">Amarela</option>
+            <option value="Amarela-Preto">Amarela-Preto</option>
+            <option value="Laranja-Branco">Laranja-Branco</option>
+            <option value="Laranja">Laranja</option>
+            <option value="Laranja-Preto">Laranja-Preto</option>
+            <option value="Verde-Branco">Verde-Branco</option>
+            <option value="Verde">Verde</option>
+            <option value="Verde-Preto">Verde-Preto</option>
+            <option value="Azul">Azul</option>
+            <option value="Roxa">Roxa</option>
+            <option value="Marrom">Marrom</option>
+            <option value="Preta">Preta</option>
+            </select>
+
+        <label for="peso">Peso com Kimono:</label>
+        <input type="number" id="peso" step="0.1" >
+        <label for="sex">Sexo: </label>
+        <input type="radio" name ="radsex" id="masc" value = "Masculino" checked>
+        <label for="masc">Masculino</label>
+        <input type="radio" name="radsex" id="fem" value = "Feminino">
+        <label for="fem">Feminino</label>
+        <button type="submit">Ver minha Categoria</button>
+    </form>
+
+    <div id="resultado">
+    </div>
+        <script src="script.js"></script>
+</body>
+</html>
