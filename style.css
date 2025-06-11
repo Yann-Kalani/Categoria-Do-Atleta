@@ -3,70 +3,118 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 /* Corpo da página */
 body {
-    background-color: #f4f4f4;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
+   background-color: #121212; /* preto suave */
+  color: #f5f5f5; /* cinza claro */
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  min-height: 100vh;
 }
 
 /* Título */
 h1 {
-    margin-bottom: 20px;
-    font-size: 2em;
-    color: #1a1a1a;
-    text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #facc15; /* amarelo */
+  text-align: center;
+}
+#btnAbrirFormularioCbjj {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background-color: #facc15; /* amarelo vibrante */
+  color: #121212;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  margin-bottom: 30px;
+}
+
+#btnAbrirFormularioCbjj:hover {
+  background-color: #eab308; /* amarelo mais escuro */
 }
 
 /* Formulário */
 form {
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.form-box{
+background-color: #1e1e1e;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 450px;
+  display: none; /* controlado pelo JS */
 }
 
-/* Inputs e selects */
+
+/* Inputs. label e selects */
+label {
+  font-weight: bold;
+  color: #f5f5f5;
+}
+
 input[type="date"],
 input[type="number"],
 select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1em;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #2c2c2c;
+  color: #f5f5f5;
+  font-size: 1em;
 }
 
+input::placeholder {
+  color: #aaa;
+}
+/* Botão CBJJ */
+.form-box {
+    display: none ;
+}
+.sexo-opcoes{
+    display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.sexo-opcoes input[type="radio"] {
+  accent-color: #facc15;
+}
 /* Botão */
-button {
-    padding: 12px;
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+form button[type="submit"] {
+  padding: 12px;
+  background-color: #facc15;
+  color: #121212;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#btnAbrirFormularioCbjj {
+display: block;
+margin: 0 auto;
 }
 
-button:hover {
-    background-color: #0056b3;
+form button[type="submit"]:hover {
+  background-color: #eab308;
 }
 
 /* Resultado */
 #resultado {
-    margin-top: 20px;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: center;
+margin-top: 20px;
+  font-size: 1.2rem;
+  color: #facc15;
+  text-align: center;
+  font-weight: bold;
 }

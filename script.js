@@ -1,5 +1,4 @@
 let form = document.getElementById ("formulario");
-
 const categoriaAdultoMasterMasculino = [
     {nome: "Galo", maxPeso: 57.5},
     {nome: "Pluma", maxPeso: 64.0},
@@ -293,5 +292,11 @@ for (let i=0; i < tabelaCategoria.length; i++){
 }
 alert(`Sua categoria na CBJJ é: ${categoriaIdade}, ${fsex}, ${faixa}, ${categoriaPeso}`);
 })
-
+document.getElementById("btnAbrirFormularioCbjj").addEventListener("click",function()
+{const formbox = document.getElementById("formBox");
+    //Mostrar o formulario da CBJJ
+    formbox.style.display="block";
+    //Rolar até o formulário
+    formbox.scrollIntoView({ behavior: "smooth"});
+    })
 
