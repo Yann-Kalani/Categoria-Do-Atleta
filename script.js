@@ -290,8 +290,13 @@ for (let i=0; i < tabelaCategoria.length; i++){
         break;
     }
 }
-alert(`Sua categoria na CBJJ é: ${categoriaIdade}, ${fsex}, ${faixa}, ${categoriaPeso}`);
-})
+// Esconde o formulário
+document.getElementById("formBox").style.display = "none";
+// Mostra o resultado na tela
+  const resultado = document.getElementById("resultado");
+  resultado.innerHTML = `Sua categoria na CBJJ é: ${categoriaIdade}, ${fsex}, ${faixa} ${categoriaPeso}.`;
+  resultado.style.display = "block";
+  });
 document.getElementById("btnAbrirFormularioCbjj").addEventListener("click",function()
 {const formbox = document.getElementById("formBox");
     //Mostrar o formulario da CBJJ
