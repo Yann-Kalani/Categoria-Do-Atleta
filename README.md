@@ -1,5 +1,8 @@
 # 🥋 Categoria do Atleta
 
+🔗 **Acesse o projeto online:**  
+👉 [https://yann-kalani.github.io/Categoria-Do-Atleta/](https://yann-kalani.github.io/Categoria-Do-Atleta/)
+
 Este projeto tem como objetivo ajudar atletas de Jiu-Jitsu a descobrirem **sua categoria correta para competições**, com base em **idade, faixa, peso e sexo**, seguindo as regras da **Confederação Brasileira de Jiu-Jitsu (CBJJ)**.
 
 ---
