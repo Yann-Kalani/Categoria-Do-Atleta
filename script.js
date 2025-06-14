@@ -301,6 +301,7 @@ document.getElementById("btnAbrirFormularioCbjj").addEventListener("click",funct
 {const formbox = document.getElementById("formBox");
     //Mostrar o formulario da CBJJ
     formbox.style.display="block";
+    formbox.style.display="margin: 0 auto";
     //Rolar até o formulário
     formbox.scrollIntoView({ behavior: "smooth"});
     })

@@ -81,6 +81,7 @@ input::placeholder {
 /* Botão CBJJ */
 .form-box {
     display: none ;
+    margin: 0 auto;
 }
 .sexo-opcoes{
     display: flex;
@@ -113,7 +114,7 @@ form button[type="submit"]:hover {
 /* Resultado */
 #resultado {
   display: none;  /* esconde a moldura por padrão*/
-  margin-top: 30px;
+  margin-top: 45px;
   font-size: 1.3rem;
   color: #facc15;
   background-color: #1e1e1e;
