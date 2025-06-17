@@ -275,13 +275,13 @@ if (categoriaIdade === "Adulto" || categoriaIdade.startsWith("Master")) {
     tabelaCategoria = infantil1;
 } else if (categoriaIdade === "Infantil 2") {
     tabelaCategoria = infantil2;
-} else if (categoriaIdade === "Ifantil 3") {
+} else if (categoriaIdade === "Infantil 3") {
     tabelaCategoria = infantil3;
-} else if (categoriaIdade === "Ifanto Juvenil 1") {
+} else if (categoriaIdade === "Infanto Juvenil 1") {
     tabelaCategoria = infantoJuvenil1;
-} else if (categoriaIdade === "Ifanto Juvenil 2") {
+} else if (categoriaIdade === "Infanto Juvenil 2") {
     tabelaCategoria = infantoJuvenil2;
-} else if (categoriaIdade === "Ifanto Juvenil 3") {
+} else if (categoriaIdade === "Infanto Juvenil 3") {
     tabelaCategoria = infantoJuvenil3;
 }
 for (let i=0; i < tabelaCategoria.length; i++){
@@ -294,15 +294,32 @@ for (let i=0; i < tabelaCategoria.length; i++){
 document.getElementById("formBox").style.display = "none";
 // Mostra o resultado na tela
   const resultado = document.getElementById("resultado");
-  resultado.innerHTML = `Sua categoria na CBJJ é: ${categoriaIdade}, ${fsex}, ${faixa} ${categoriaPeso}.`;
+  resultado.innerHTML = `Sua categoria na CBJJ é: ${categoriaIdade}, ${fsex}, ${faixa}, ${categoriaPeso}.`;
   resultado.style.display = "block";
-  });
+  
+    document.getElementById("novaConsulta").style.display="inline-block"
+    document.getElementById("novaConsulta").addEventListener("click", function (){
+        // oculta resultado e botão
+        document.getElementById("resultado").style.display = "none";
+        this.style.display = "none";
+
+        //Mostra o formulário
+        document.getElementById ("formBox").style.display="block";
+
+        //Rola até o formulário
+        document.getElementById("formBox").scrollIntoView({behavior:"smooth"});
+
+        //limpa os campos
+        document.getElementById("formulário").reset()
+    })
+});
 document.getElementById("btnAbrirFormularioCbjj").addEventListener("click",function()
 {const formbox = document.getElementById("formBox");
     //Mostrar o formulario da CBJJ
     formbox.style.display="block";
-    formbox.style.display="margin: 0 auto";
     //Rolar até o formulário
     formbox.scrollIntoView({ behavior: "smooth"});
+    resultado.classList.add("fade-in");
     })
+
 
