@@ -297,7 +297,7 @@ document.getElementById("formBox").style.display = "none";
   resultado.innerHTML = `Sua categoria na CBJJ é: ${categoriaIdade}, ${fsex}, ${faixa}, ${categoriaPeso}.`;
   resultado.style.display = "block";
   
-    document.getElementById("novaConsulta").style.display="inline-block"
+    document.getElementById("novaConsulta").style.display = "block";
     document.getElementById("novaConsulta").addEventListener("click", function (){
         // oculta resultado e botão
         document.getElementById("resultado").style.display = "none";
@@ -310,11 +310,12 @@ document.getElementById("formBox").style.display = "none";
         document.getElementById("formBox").scrollIntoView({behavior:"smooth"});
 
         //limpa os campos
-        document.getElementById("formulário").reset()
+        document.getElementById("formulario").reset()
     })
 });
 document.getElementById("btnAbrirFormularioCbjj").addEventListener("click",function()
 {const formbox = document.getElementById("formBox");
+
     //Mostrar o formulario da CBJJ
     formbox.style.display="block";
     //Rolar até o formulário
