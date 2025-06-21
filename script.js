@@ -175,143 +175,145 @@ const infantoJuvenil3 = [
 ]
 
 form.addEventListener("submit", function (event){
-    event.preventDefault()
-let faixa = document.getElementById("faixa").value     
-let peso = document.getElementById("peso").value 
-let dataNascimento = document.getElementById("dataNascimento").value
-let fsex = document.querySelector('input[name="radsex"]:checked').value   
-peso = parseFloat (peso);
-let anoNascimento = new Date(dataNascimento).getFullYear();
-let anoAtual = new Date().getFullYear();
-let idade = anoAtual - anoNascimento;
-let categoriaIdade = ''
-// separar as categorias de idade
-if (idade ===4) {
-    categoriaIdade = "pré-Mirim 1"
-}
-else if (idade === 5){
-    categoriaIdade = "pré-Mirim 2"
-}
-else if (idade === 6){
-    categoriaIdade = "pré-Mirim 3"
-}
-else if(idade === 7){
-    categoriaIdade = "Mirim 1"
-}
-else if(idade === 8){
-    categoriaIdade = "Mirim 2"
-}
-else if(idade === 9){
-    categoriaIdade = "Mirim 3"
-}
-else if(idade ===10){ 
-    categoriaIdade = "Infantil 1"
-}
-else if (idade === 11){
-    categoriaIdade ="Infantil 2"
-}
-else if(idade === 12){
-    categoriaIdade = "Infantil 3"
-}
-else if (idade === 13){
-    categoriaIdade = "Infanto Juvenil 1"
-}
-else if (idade === 14){
-    categoriaIdade = "Infanto Juvenil 2"
-}
-else if (idade===15){
-    categoriaIdade = "Infanto Juvenil 3"
-}
-else if (idade===16){
-    categoriaIdade = "Juvenil 1"
-}
-else if (idade===17){
-    categoriaIdade = "Juvenil 2"
-}
-else if (idade >=18 && idade <=29){
-    categoriaIdade = "Adulto"
-}
-else if (idade >=30 && idade <=35) {
-    categoriaIdade = "Master 1"
-}
-else if (idade >=36 && idade <=40){
-    categoriaIdade = "Master 2"
-}
-else if (idade >=41 && idade <=45){
-    categoriaIdade = "Master 3"
-}
-else if (idade >=46 && idade <=50){
-    categoriaIdade = "Master 4"
-}
-else if (idade >=51 && idade <=55){
-    categoriaIdade = "master 5"
-}
-else if (idade >= 56 && idade <=60){
-    categoriaIdade = "Master 6"
-}
-else if (idade >61){
-    categoriaIdade = "Master 7"
-}
-// criar as categorias de peso para cada idade
-categoriaPeso = ''
-let tabelaCategoria = [] ;
-if (categoriaIdade === "Adulto" || categoriaIdade.startsWith("Master")) {
-    tabelaCategoria = fsex === "Masculino" ? categoriaAdultoMasterMasculino : categoriaAdultoMasterFeminino;
-} else if (categoriaIdade === "Juvenil 1" || categoriaIdade === "Juvenil 2") {
-    tabelaCategoria = fsex === "Masculino" ? categoriaJuvenilMasculino : categoriaJuvenilFeminino;
-} else if (categoriaIdade === "pré-Mirim 1") {
-    tabelaCategoria = categoriaPreMirim1;
-} else if (categoriaIdade === "pré-Mirim 2") {
-    tabelaCategoria = categoriaPreMirim2;
-} else if (categoriaIdade === "pré-Mirim 3") {
-    tabelaCategoria = categoriaPreMirim3;
-} else if (categoriaIdade === "Mirim 1") {
-    tabelaCategoria = categoriaMirim1;
-} else if (categoriaIdade === "Mirim 2") {
-    tabelaCategoria = categoriaMirim2;
-} else if (categoriaIdade === "Mirim 3") {
-    tabelaCategoria = categoriaMirim3;
-} else if (categoriaIdade === "Infantil 1") {
-    tabelaCategoria = infantil1;
-} else if (categoriaIdade === "Infantil 2") {
-    tabelaCategoria = infantil2;
-} else if (categoriaIdade === "Infantil 3") {
-    tabelaCategoria = infantil3;
-} else if (categoriaIdade === "Infanto Juvenil 1") {
-    tabelaCategoria = infantoJuvenil1;
-} else if (categoriaIdade === "Infanto Juvenil 2") {
-    tabelaCategoria = infantoJuvenil2;
-} else if (categoriaIdade === "Infanto Juvenil 3") {
-    tabelaCategoria = infantoJuvenil3;
-}
-for (let i=0; i < tabelaCategoria.length; i++){
-    if (peso<=tabelaCategoria[i].maxPeso){
-        categoriaPeso = tabelaCategoria[i].nome;
-        break;
+        event.preventDefault()
+    let faixa = document.getElementById("faixa").value     
+    let peso = document.getElementById("peso").value 
+    let dataNascimento = document.getElementById("dataNascimento").value
+    let fsex = document.querySelector('input[name="radsex"]:checked').value   
+    peso = parseFloat (peso);
+    let anoNascimento = new Date(dataNascimento).getFullYear();
+    let anoAtual = new Date().getFullYear();
+    let idade = anoAtual - anoNascimento;
+    let categoriaIdade = ''
+    // separar as categorias de idade
+    if (idade ===4) {
+        categoriaIdade = "pré-Mirim 1"
     }
-}
-// Esconde o formulário
-document.getElementById("formBox").style.display = "none";
-// Mostra o resultado na tela
-  const resultado = document.getElementById("resultado");
-  resultado.innerHTML = `Sua categoria na CBJJ é: ${categoriaIdade}, ${fsex}, ${faixa}, ${categoriaPeso}.`;
-  resultado.style.display = "block";
-  
-    document.getElementById("novaConsulta").style.display = "block";
-    document.getElementById("novaConsulta").addEventListener("click", function (){
-        // oculta resultado e botão
-        document.getElementById("resultado").style.display = "none";
-        this.style.display = "none";
+    else if (idade === 5){
+        categoriaIdade = "pré-Mirim 2"
+    }
+    else if (idade === 6){
+        categoriaIdade = "pré-Mirim 3"
+    }
+    else if(idade === 7){
+        categoriaIdade = "Mirim 1"
+    }
+    else if(idade === 8){
+        categoriaIdade = "Mirim 2"
+    }
+    else if(idade === 9){
+        categoriaIdade = "Mirim 3"
+    }
+    else if(idade ===10){ 
+        categoriaIdade = "Infantil 1"
+    }
+    else if (idade === 11){
+        categoriaIdade ="Infantil 2"
+    }
+    else if(idade === 12){
+        categoriaIdade = "Infantil 3"
+    }
+    else if (idade === 13){
+        categoriaIdade = "Infanto Juvenil 1"
+    }
+    else if (idade === 14){
+        categoriaIdade = "Infanto Juvenil 2"
+    }
+    else if (idade===15){
+        categoriaIdade = "Infanto Juvenil 3"
+    }
+    else if (idade===16){
+        categoriaIdade = "Juvenil 1"
+    }
+    else if (idade===17){
+        categoriaIdade = "Juvenil 2"
+    }
+    else if (idade >=18 && idade <=29){
+        categoriaIdade = "Adulto"
+    }
+    else if (idade >=30 && idade <=35) {
+        categoriaIdade = "Master 1"
+    }
+    else if (idade >=36 && idade <=40){
+        categoriaIdade = "Master 2"
+    }
+    else if (idade >=41 && idade <=45){
+        categoriaIdade = "Master 3"
+    }
+    else if (idade >=46 && idade <=50){
+        categoriaIdade = "Master 4"
+    }
+    else if (idade >=51 && idade <=55){
+        categoriaIdade = "master 5"
+    }
+    else if (idade >= 56 && idade <=60){
+        categoriaIdade = "Master 6"
+    }
+    else if (idade >61){
+        categoriaIdade = "Master 7"
+    }
+    // criar as categorias de peso para cada idade
+    categoriaPeso = ''
+    let tabelaCategoria = [] ;
+    if (categoriaIdade === "Adulto" || categoriaIdade.startsWith("Master")) {
+        tabelaCategoria = fsex === "Masculino" ? categoriaAdultoMasterMasculino : categoriaAdultoMasterFeminino;
+    } else if (categoriaIdade === "Juvenil 1" || categoriaIdade === "Juvenil 2") {
+        tabelaCategoria = fsex === "Masculino" ? categoriaJuvenilMasculino : categoriaJuvenilFeminino;
+    } else if (categoriaIdade === "pré-Mirim 1") {
+        tabelaCategoria = categoriaPreMirim1;
+    } else if (categoriaIdade === "pré-Mirim 2") {
+        tabelaCategoria = categoriaPreMirim2;
+    } else if (categoriaIdade === "pré-Mirim 3") {
+        tabelaCategoria = categoriaPreMirim3;
+    } else if (categoriaIdade === "Mirim 1") {
+        tabelaCategoria = categoriaMirim1;
+    } else if (categoriaIdade === "Mirim 2") {
+        tabelaCategoria = categoriaMirim2;
+    } else if (categoriaIdade === "Mirim 3") {
+        tabelaCategoria = categoriaMirim3;
+    } else if (categoriaIdade === "Infantil 1") {
+        tabelaCategoria = infantil1;
+    } else if (categoriaIdade === "Infantil 2") {
+        tabelaCategoria = infantil2;
+    } else if (categoriaIdade === "Infantil 3") {
+        tabelaCategoria = infantil3;
+    } else if (categoriaIdade === "Infanto Juvenil 1") {
+        tabelaCategoria = infantoJuvenil1;
+    } else if (categoriaIdade === "Infanto Juvenil 2") {
+        tabelaCategoria = infantoJuvenil2;
+    } else if (categoriaIdade === "Infanto Juvenil 3") {
+        tabelaCategoria = infantoJuvenil3;
+    }
+    for (let i=0; i < tabelaCategoria.length; i++){
+        if (peso<=tabelaCategoria[i].maxPeso){
+            categoriaPeso = tabelaCategoria[i].nome;
+            break;
+        }
+    }
+    // Esconde o formulário
+    document.getElementById("formBox").style.display = "none";
+    // Mostra o resultado na tela
+    const resultado = document.getElementById("resultado");
+    resultado.innerHTML = `Sua categoria na CBJJ é: ${categoriaIdade}, ${fsex}, ${faixa}, ${categoriaPeso}.`;
+    resultado.style.display = "block";
 
-        //Mostra o formulário
-        document.getElementById ("formBox").style.display="block";
+        document.getElementById("btnAbrirFormularioCbjj").style.display = "none";
+        
+        document.getElementById("novaConsulta").style.display = "block";
+        document.getElementById("novaConsulta").addEventListener("click", function (){
+            // oculta resultado e botão
+            document.getElementById("resultado").style.display = "none";
+            this.style.display = "none";
 
-        //Rola até o formulário
-        document.getElementById("formBox").scrollIntoView({behavior:"smooth"});
+            //Mostra o formulário
+            document.getElementById ("formBox").style.display="block";
 
-        //limpa os campos
-        document.getElementById("formulario").reset()
-    })
+            //Rola até o formulário
+            document.getElementById("formBox").scrollIntoView({behavior:"smooth"});
+
+            //limpa os campos
+            document.getElementById("formulario").reset()
+        })
 });
 document.getElementById("btnAbrirFormularioCbjj").addEventListener("click",function()
 {const formbox = document.getElementById("formBox");
