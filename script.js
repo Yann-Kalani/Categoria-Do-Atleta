@@ -324,5 +324,3 @@ document.getElementById("btnAbrirFormularioCbjj").addEventListener("click",funct
     formbox.scrollIntoView({ behavior: "smooth"});
     resultado.classList.add("fade-in");
     })
-
-
